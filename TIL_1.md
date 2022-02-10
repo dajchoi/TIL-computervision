@@ -30,6 +30,9 @@ one in the horizontal and the other in the vertical way
 ##### [Gaussian Filtering]
 1D -> 1/(sqrt(2pi)*sigma)*np.exp(-x^2/(2*sigma^2))
 2D -> 1/(2pi*sigma^2)*np.exp(-(x^2+y^2)/2*sigma^2)
+##### [Median Filtering]
+non-linear operation that is effective at removing salt and pepper noise
+: replaces each pixel by the median of its neighbors
 __________________________________________________
 ##### [Correlation Filtering]
 G[i,j] = sum(u: from -k to k)sum(v: from -k to k)H[u,v]F[i+u,j+v]
