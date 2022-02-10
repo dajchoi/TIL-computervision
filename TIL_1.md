@@ -27,3 +27,16 @@ some 2D image filters can implemented as 2 1D filters,
 one in the horizontal and the other in the vertical way
 +) This implies lower complexity bringing up efficiency.
 
+##### [Gaussian Filtering]
+1D -> 1/(sqrt(2pi)*sigma)*np.exp(-x^2/(2*sigma^2))
+2D -> 1/(2pi*sigma^2)*np.exp(-(x^2+y^2)/2*sigma^2)
+__________________________________________________
+##### [Correlation Filtering]
+G[i,j] = sum(u:-k~k)sum(v:-k~k)H[u,v]F[i+u,j+v]
+##### [Convolution]
+G[i,j] = sum(u:-k~k)sum(v:-k~k)H[u,v]F[i-u,j-v]
+
+give the same response if the mask is symmetric
+
+
+
