@@ -18,9 +18,25 @@ Canny Edge Detector
   - non maximum suppression
   - linking + thresholding (hysteresis)
   *for thresholding (high: start edge curves, low: continue the mentioned edge curves)
+ <non-maximum suppression>
+   interpolate the dots if the value is larger than those at both the dots
+ <hysteresis thresholding>
+   check that max value of gradient value is sufficiently large
+   (high threshold to start edge curve -> low threshold to continue them)
+   high threshold: more clear and thin (strong edges)
+   low threshold: (weak edges)
+sigma: 
+   large sigma (detects) large scale edges
+   small sigma (detects) fine features
 
+_____________________________________________________________
+   
 ### Feature Extraction - set of dot products
 feature types (1) points (2) edges-line and step (3) contours-closed(boundaries) (4) regions
 ##### Gradient of an Image
 gradient direction -> ceta = tan^(-1)(sigma(f)/sigma(y))/(sigma(f)/sigma(x))
 edge strength -> gradient magnitude
+##### Second derivative detector
+(LoG = Lapacian of Gaussian)
+   
+   
