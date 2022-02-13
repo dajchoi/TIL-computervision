@@ -1,4 +1,10 @@
 ## When making a kernel for filterization
+#### filterization (Image Filtering)
+  - noise reduction -> image restoration
+  - structure extraction
+##### Noise
+[1] additive noise -> corrupted with random fluctuations
+[2] salt & pepper noise -> can model errors through acquisition process
 
 #### 1. numpy.arange ([start,] stop, [step,] dtype=None, *, like=None)
 start has a default of 0
@@ -34,11 +40,18 @@ one in the horizontal and the other in the vertical way
 non-linear operation that is effective at removing salt and pepper noise
 : replaces each pixel by the median of its neighbors
 __________________________________________________
-##### [Correlation Filtering]
+##### [Correlation Filtering] = symbol by x with a circle around
 G[i,j] = sum(u: from -k to k)sum(v: from -k to k)H[u,v]F[i+u,j+v]
-##### [Convolution]
-G[i,j] = sum(u: from -k to k)sum(v: from -k to k)H[u,v]F[i-u,j-v]
+*kernel mask weights in the linear combination; replaces each pixel by weighted combination of its neighbors
 
+##### [Convolution] -------- filter is flipped from bottom to top and from right to left; then cross-correlation applied = symbol by *
+G[i,j] = sum(u: from -k to k)sum(v: from -k to k)H[u,v]F[i-u,j-v]
+(+) Kernel => (for noise recuction) 
+(1) Mean Kernel: smoothing by averaging entries; entries must add up to 1 
+(2) Gaussian Kernel
+___________________________________________________
+
+*Correlation and Convolution relationship:
 give the same response if the mask is symmetric
 
 
