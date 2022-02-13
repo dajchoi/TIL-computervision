@@ -12,8 +12,12 @@ minimize the probability of false positives + false negatives
 edges detected must be as close as possible to the true edges
 _____________________________________________________________
 Canny Edge Detector
-
-
+<process>
+  - filter image with derivative of Gaussian
+  - find magnitude and orientation of gradient
+  - non maximum suppression
+  - linking + thresholding (hysteresis)
+  *for thresholding (high: start edge curves, low: continue the mentioned edge curves)
 
 ### Feature Extraction - set of dot products
 feature types (1) points (2) edges-line and step (3) contours-closed(boundaries) (4) regions
